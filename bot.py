@@ -1,5 +1,5 @@
 from pyrogram import Client
-from config import API_ID, API_HASH, BOT_TOKEN, LOGGER
+from config import API_ID, API_HASH, BOT_TOKEN
 
 class Bot(Client):
 
@@ -13,18 +13,14 @@ class Bot(Client):
          workers=50,
          sleep_threshold=10
         )
-        self.LOGGER = LOGGER
 
     async def start(self):
-            
         await super().start()
         me = await self.get_me()
         self.username = '@' + me.username
             
-        print('Bot Started Successfully')
+        print(f'{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️ Successfully')
 
-        self.LOGGER(__name__).info(f"Bot Running..!\n\n❤ with love  \n ıllıllı🚀🌟 L͙a͙z͙y͙D͙e͙v͙e͙l͙o͙p͙e͙r͙r͙ 🌟🚀ıllıllı")
-        print(f"{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️")
 
     async def stop(self, *args):
 
