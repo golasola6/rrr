@@ -1,11 +1,11 @@
 from pyrogram import Client
-from config import API_ID, API_HASH, BOT_TOKEN
+from config import API_ID, API_HASH, BOT_TOKEN, LOGGER
 
 class Bot(Client):
 
     def __init__(self):
         super().__init__(
-        "All request accept bot",
+        "LazyDeveloeprr_REQUEST_ACCEPTOR_BOT",
          api_id=API_ID,
          api_hash=API_HASH,
          bot_token=BOT_TOKEN,
@@ -13,8 +13,8 @@ class Bot(Client):
          workers=50,
          sleep_threshold=10
         )
+        self.LOGGER = LOGGER
 
-      
     async def start(self):
             
         await super().start()
@@ -23,6 +23,8 @@ class Bot(Client):
             
         print('Bot Started Successfully')
 
+        self.LOGGER(__name__).info(f"Bot Running..!\n\n❤ with love  \n ıllıllı🚀🌟 L͙a͙z͙y͙D͙e͙v͙e͙l͙o͙p͙e͙r͙r͙ 🌟🚀ıllıllı")
+        print(f"{me.first_name} 𝚂𝚃𝙰𝚁𝚃𝙴𝙳 ⚡️⚡️⚡️")
 
     async def stop(self, *args):
 
